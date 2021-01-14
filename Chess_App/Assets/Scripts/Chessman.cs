@@ -33,17 +33,17 @@ public class Chessman : MonoBehaviour
 
         switch (this.name)
         {
-            case "black_queen": this.GetComponent<SpriteRenderer>().sprite = black_queen; player = "black"; startHealthBar(4,4); break;
-            case "black_knight": this.GetComponent<SpriteRenderer>().sprite = black_knight; player = "black"; startHealthBar(3,2); break;
+            case "black_queen": this.GetComponent<SpriteRenderer>().sprite = black_queen; player = "black"; startHealthBar(3,2); break;
+            case "black_knight": this.GetComponent<SpriteRenderer>().sprite = black_knight; player = "black"; startHealthBar(3,3); break;
             case "black_bishop": this.GetComponent<SpriteRenderer>().sprite = black_bishop; player = "black"; startHealthBar(3,2); break;
-            case "black_king": this.GetComponent<SpriteRenderer>().sprite = black_king; player = "black"; startHealthBar(3,3); break;
+            case "black_king": this.GetComponent<SpriteRenderer>().sprite = black_king; player = "black"; startHealthBar(4,3); break;
             case "black_rook": this.GetComponent<SpriteRenderer>().sprite = black_rook; player = "black"; startHealthBar(2,2); break;
             case "black_pawn": this.GetComponent<SpriteRenderer>().sprite = black_pawn; player = "black"; startHealthBar(1,1); break;
 
-            case "white_queen": this.GetComponent<SpriteRenderer>().sprite = white_queen; player = "white"; startHealthBar(4,2); break;
-            case "white_knight": this.GetComponent<SpriteRenderer>().sprite = white_knight; player = "white"; startHealthBar(3,2); break;
+            case "white_queen": this.GetComponent<SpriteRenderer>().sprite = white_queen; player = "white"; startHealthBar(3,2); break;
+            case "white_knight": this.GetComponent<SpriteRenderer>().sprite = white_knight; player = "white"; startHealthBar(3,3); break;
             case "white_bishop": this.GetComponent<SpriteRenderer>().sprite = white_bishop; player = "white"; startHealthBar(3,2); break;
-            case "white_king": this.GetComponent<SpriteRenderer>().sprite = white_king; player = "white"; startHealthBar(3,3); break;
+            case "white_king": this.GetComponent<SpriteRenderer>().sprite = white_king; player = "white"; startHealthBar(4,3); break;
             case "white_rook": this.GetComponent<SpriteRenderer>().sprite = white_rook; player = "white"; startHealthBar(2,2); break;
             case "white_pawn": this.GetComponent<SpriteRenderer>().sprite = white_pawn; player = "white"; startHealthBar(1,1); break;
         }
