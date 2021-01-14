@@ -12,11 +12,15 @@ public class Game : MonoBehaviour
     private GameObject[] playerBlack = new GameObject[16];
     private GameObject[] playerWhite = new GameObject[16];
 
-    //boolean deðer de alabilir gibi
     private string currentPlayer = "white";
     public string CurrentPlayer { get => currentPlayer; set => currentPlayer = value; }
 
     private bool gameOver = false;
+
+    public float moveSpeed = 5f;
+    public Rigidbody2D rbPawn;
+    public Animator animatorPawn;
+    Vector2 movement;
 
     void Start()
     {
@@ -91,7 +95,7 @@ public class Game : MonoBehaviour
     }
     public void Update()
     {
-        if(gameOver == true && Input.GetMouseButtonDown(0))
+        if (gameOver == true && Input.GetMouseButtonDown(0))
         {
             gameOver = false;
             SceneManager.LoadScene("Game");
