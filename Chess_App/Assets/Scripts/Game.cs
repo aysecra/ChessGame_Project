@@ -97,11 +97,15 @@ public class Game : MonoBehaviour
         {
             reload.SetActive(true);
         }
+        else
+        {
+            GameObject.FindGameObjectWithTag("WinnerText").GetComponent<Text>().enabled = true;
+            GameObject.FindGameObjectWithTag("WinnerText").GetComponent<Text>().text = currentPlayer;
+        }
     }
     public void Winner(string playerWinner)
     {
         gameOver = true;
-        GameObject.FindGameObjectWithTag("WinnerText").GetComponent<Text>().enabled  = true;
         GameObject.FindGameObjectWithTag("WinnerText").GetComponent<Text>().text  = playerWinner + " is the winner";
 
     }
