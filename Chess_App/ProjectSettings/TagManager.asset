@@ -8,6 +8,7 @@ TagManager:
   - WinnerText
   - RestartText
   - HealthBar
+  - Reload
   layers:
   - Default
   - TransparentFX

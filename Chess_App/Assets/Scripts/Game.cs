@@ -7,6 +7,7 @@ using UnityEngine.UI;
 public class Game : MonoBehaviour
 {
     public GameObject chesspiece;
+    public GameObject reload;
 
     private GameObject[,] positions = new GameObject[8, 8];
     private GameObject[] playerBlack = new GameObject[16];
@@ -17,14 +18,9 @@ public class Game : MonoBehaviour
 
     private bool gameOver = false;
 
-    public float moveSpeed = 5f;
-    public Rigidbody2D rbPawn;
-    public Animator animatorPawn;
-    Vector2 movement;
-
     void Start()
     {
-
+        reload.SetActive(false);
         playerWhite = new GameObject[]
         {
             Create("white_rook", 0, 0), Create("white_knight", 1, 0), Create("white_bishop", 2, 0), Create("white_queen", 3, 0),
@@ -44,6 +40,7 @@ public class Game : MonoBehaviour
         for (int i = 0; i < playerWhite.Length; i++)
         {
             SetPosition(playerBlack[i]);
+
             SetPosition(playerWhite[i]);
         }
 
@@ -95,10 +92,10 @@ public class Game : MonoBehaviour
     }
     public void Update()
     {
-        if (gameOver == true && Input.GetMouseButtonDown(0))
+
+        if (gameOver == true)
         {
-            gameOver = false;
-            SceneManager.LoadScene("Game");
+            reload.SetActive(true);
         }
     }
     public void Winner(string playerWinner)
@@ -107,6 +104,10 @@ public class Game : MonoBehaviour
         GameObject.FindGameObjectWithTag("WinnerText").GetComponent<Text>().enabled  = true;
         GameObject.FindGameObjectWithTag("WinnerText").GetComponent<Text>().text  = playerWinner + " is the winner";
 
-        GameObject.FindGameObjectWithTag("RestartText").GetComponent<Text>().enabled  = true;
+    }
+    public void Reload()
+    {
+        gameOver = false;
+        SceneManager.LoadScene("Game");
     }
 }
